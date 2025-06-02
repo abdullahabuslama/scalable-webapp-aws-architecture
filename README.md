@@ -81,8 +81,10 @@ This repository illustrates how to build and deploy a simple, **EC2-based** web 
 <p align="center">
   <img src="Architecture/scalable-webapp-aws-architecture.jpg" alt="Scalable Web Application Architecture" width="80%"/>
 </p>  
+
 > _Figure 1_  
 > - End-to-end AWS architecture showing highly available, auto-scalable web & app tiers, Multi-AZ RDS, and monitoring/alerting.
+
 ---
 
 ## 🔐 IAM Roles & Policies  
