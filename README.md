@@ -15,7 +15,7 @@ This repository illustrates how to build and deploy a simple, **EC2-based** web 
 1. **High Availability & Fault Tolerance**  
    - Public Application Load Balancer (ALB) in front of a web tier (stateless EC2 fleet).  
    - Auto Scaling Group (ASG) on the web tier to add/remove instances based on load.  
-   - Private Application Load Balancer routing traffic to an app tier (second EC2 fleet).  
+   - Private Application Load Balancer (ALB) routing traffic to an app tier (second EC2 fleet).  
    - Amazon RDS (Multi-AZ) for a fault-tolerant, highly available database layer.
 
 2. **Security & Access Controls**  
@@ -81,7 +81,7 @@ This repository illustrates how to build and deploy a simple, **EC2-based** web 
 <p align="center">
   <img src="Architecture/scalable-webapp-aws-architecture.jpg" alt="Scalable Web Application Architecture" width="80%"/>
 </p>  
-> _Figure 1:_ End-to-end AWS architecture showing highly available, auto-scalable web & app tiers, Multi-AZ RDS, and monitoring/alerting.  
+> Figure 1: End-to-end AWS architecture showing highly available, auto-scalable web & app tiers, Multi-AZ RDS, and monitoring/alerting.  
 
 ---
 
@@ -159,11 +159,6 @@ Below are the minimum service-linked roles or policies required for each core AW
 - **Configure Auto Scaling** policies for dynamic, cost-effective resource management.  
 - **Lock Down Security** with proper IAM roles, Security Groups, and subnet segmentation (public/private).  
 - **Integrate Monitoring & Alerting** to proactively respond to infrastructure events and failures.  
-- **Question Best Practices:**  
-  - Is our application tier stateless?  
-  - Are we over-provisioning NAT Gateways? Could a single NAT with public subnets suffice?  
-  - Do our Auto Scaling thresholds align well with real user traffic patterns?  
-  - How would blue/green or canary deployments affect this setup?  
 
 ---
 
