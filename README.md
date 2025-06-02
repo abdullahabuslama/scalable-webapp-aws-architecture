@@ -1,1 +1,1 @@
-# AWS_Architecture_Scalable_Web_Application
+# scalable-webapp-aws-architecture
