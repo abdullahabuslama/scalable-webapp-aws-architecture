@@ -58,7 +58,7 @@ This repository illustrates how to build and deploy a simple, **EC2-based** web 
 
 ---
 
-## 🛠️ Key AWS Services  
+## Key AWS Services 🛠️ 
 - **EC2 (Elastic Compute Cloud):** Hosts the web and application tiers. Instances are launched into Auto Scaling Groups.  
 - **Application Load Balancer (ALB):**  
   - **Web-Tier ALB (Public):** Exposes port 80/443 to the internet.  
