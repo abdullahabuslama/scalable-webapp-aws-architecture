@@ -38,7 +38,7 @@ This repository illustrates how to build and deploy a simple, **EC2-based** web 
 4. [IAM Roles & Policies](#-iam-roles--policies)  
 5. [Security Groups](#-security-groups)  
 6. [Project Flow](#-project-flow)  
-7. [Outcomes](#-project-outcomes)  
+7. [Project Outcomes](#-project-outcomes)  
 8. [Setup & Deployment](#-setup--deployment)
 
 ---
