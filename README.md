@@ -38,7 +38,7 @@ This repository illustrates how to build and deploy a simple, **EC2-based** web 
 4. [IAM Roles & Policies](#-iam-roles--policies)  
 5. [Security Groups](#-security-groups)  
 6. [Project Flow](#-project-flow)  
-7. [Outcomes](#-outcomes)  
+7. [Outcomes](#-project-outcomes)  
 8. [Setup & Deployment](#-setup--deployment)
 
 ---
@@ -81,8 +81,8 @@ This repository illustrates how to build and deploy a simple, **EC2-based** web 
 <p align="center">
   <img src="Architecture/scalable-webapp-aws-architecture.jpg" alt="Scalable Web Application Architecture" width="80%"/>
 </p>  
-> Figure 1: End-to-end AWS architecture showing highly available, auto-scalable web & app tiers, Multi-AZ RDS, and monitoring/alerting.  
-
+> _Figure 1_  
+> - End-to-end AWS architecture showing highly available, auto-scalable web & app tiers, Multi-AZ RDS, and monitoring/alerting.
 ---
 
 ## 🔐 IAM Roles & Policies  
@@ -122,37 +122,37 @@ Below are the minimum service-linked roles or policies required for each core AW
 ---
 
 ## 🔄 Project Flow  
-1. **Client Request (Step 1):**  
+1. **Client Request (Step 1-2):**  
    - An external user enters the website domain name.  
    - **Route 53** resolves DNS → forwards to the **Web-Tier ALB** endpoint.  
 
-2. **Web Tier Processing (Steps 2–4):**  
+2. **Web Tier Processing (Steps 3-5):**  
    - The Web-Tier ALB receives the request (via the **Internet Gateway**).  
    - ALB load-balances traffic across healthy **Web-Tier EC2** instances in two AZs.  
    - **Auto Scaling Group (ASG)** monitors instance metrics (CPU Utilization, Request Count per Target) to decide:  
-     1. Scale-up if traffic spikes.  
-     2. Scale-down when traffic falls.
+     - Scale-up if traffic spikes.  
+     - Scale-down when traffic falls.
 
-3. **Application Tier (Steps 5–6):**  
+3. **Application Tier (Steps 6-8):**  
    - Once the web server needs business logic, it makes an internal HTTP call to the **App-Tier ALB** (private DNS).  
    - The private ALB then load-balances among **App-Tier EC2** instances that host the application (e.g., Node.js, Python Flask, etc.).  
    - The app server invokes queries to **Amazon RDS (Primary Endpoint)** on port 3306.
 
-4. **Database Tier & Failover (Step 7):**  
+4. **Database Tier & Failover (Step 9-10):**  
    - RDS is configured in **Multi-AZ** mode:  
      - **Primary** in AZ A (e.g., `10.0.3.0/24`).  
      - **Standby** in AZ B (e.g., `10.0.13.0/24`).  
    - In the event of a primary failure, RDS automatically promotes the standby to primary with minimal downtime.
 
-5. **Monitoring & Alerts (Steps 8–10):**  
-   1. **CloudWatch** captures ASG lifecycle events (launch, terminate, failed actions).  
-   2. **CloudWatch** also tracks RDS failover notifications.  
-   3. These events trigger a **CloudWatch Alarm** → publishes to an **SNS Topic**.  
-   4. **Administrator** (or ops team) subscribed to the SNS topic receives an **Email/SMS** alert immediately.
+5. **Monitoring & Alerts (Steps 11-14):**  
+   - **CloudWatch** captures ASG lifecycle events (launch, terminate, failed actions).  
+   - **CloudWatch** also tracks RDS failover notifications.  
+   - These events trigger a **CloudWatch Alarm** → publishes to an **SNS Topic**.  
+   - **Administrator** (or ops team) subscribed to the SNS topic receives an **Email/SMS** alert immediately.
 
 ---
 
-## 🎯 Outcomes  
+## 🎯 Project Outcomes  
  
 - **Design & Deploy** a secure, multi-tier web application in AWS.  
 - **Implement High Availability** via load balancers and multi-AZ RDS configurations.  
