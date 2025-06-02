@@ -33,10 +33,10 @@ This repository illustrates how to build and deploy a simple, **EC2-based** web 
 
 ## 📋 Table of Contents  
 1. [Project Description](#project-description)  
-2. [Key AWS Services](#key-aws-services)  
-3. [Architecture Diagram](#architecture-diagram)  
-4. [IAM Roles & Policies](#iam-roles--policies)  
-5. [Security Groups](#security-groups)  
+2. [Key AWS Services](#%EF%B8%8F-key-aws-services)  
+3. [Architecture Diagram](#%EF%B8%8F-architecture-diagram)  
+4. [IAM Roles & Policies](#-iam-roles--policies)  
+5. [Security Groups](#-security-groups)  
 6. [Project Flow](#project-flow)  
 7. [Learning Outcomes](#learning-outcomes)  
 8. [Setup & Deployment](#setup--deployment)  
