@@ -153,7 +153,7 @@ Below are the minimum service-linked roles or policies required for each core AW
 ---
 
 ## 🎯 Outcomes  
-By following this project, you will:  
+ 
 - **Design & Deploy** a secure, multi-tier web application in AWS.  
 - **Implement High Availability** via load balancers and multi-AZ RDS configurations.  
 - **Configure Auto Scaling** policies for dynamic, cost-effective resource management.  
