@@ -153,7 +153,7 @@ Below are the minimum service-linked roles or policies required for each core AW
 
 ---
 
-## 🎯 Learning Outcomes  
+## 🎯 Outcomes  
 By following this project, you will:  
 - **Design & Deploy** a secure, multi-tier web application in AWS.  
 - **Implement High Availability** via load balancers and multi-AZ RDS configurations.  
@@ -176,6 +176,6 @@ By following this project, you will:
 
 1. **Clone this repository locally**  
    ```bash
-   git clone https://github.com/<your-username>/scalable-webapp-aws-architecture.git
+   git clone https://github.com/abdullahabuslama/scalable-webapp-aws-architecture.git
    cd scalable-webapp-aws-architecture
 
